@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
                         if (response.code() == 200) {
                             Toast.makeText(MainActivity.this,
-                                    "Signed up successfully", Toast.LENGTH_LONG).show();
+                                    "Signed up successfully!", Toast.LENGTH_LONG).show();
                         } else if (response.code() == 400) {
                             Toast.makeText(MainActivity.this,
                                     "Already registered", Toast.LENGTH_LONG).show();
