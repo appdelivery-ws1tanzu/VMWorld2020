@@ -30,12 +30,6 @@ platform :android do
     # You can also use other beta testing services here
   end
 
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
-  end
-
     desc "Build a New Version"
     lane :build do
       gradle(
@@ -43,4 +37,18 @@ platform :android do
     build_type: "Release",
     print_command: false)
     end
+
+    // This is our application deployment coding section
+
+      desc "Deploy a new version to the Google Play"
+      lane :deploy do
+        gradle(task: "clean assembleRelease",
+         properties: {
+            "android.injected.signing.store.file" => "/Users/Connollysean/StudioProjects/Untitled",
+            "android.injected.signing.store.password" => "VMware1!",
+            "android.injected.signing.key.alias" => "Key0",
+            "android.injected.signing.key.password" => "VMware1!D",
+            })
+        upload_to_play_store(track: 'internal')
+      end
 end
