@@ -38,8 +38,6 @@ platform :android do
     print_command: false)
     end
 
-    // This is our application deployment coding section
-
       desc "Deploy a new version to the Google Play"
       lane :deploy do
         gradle(task: "clean assembleRelease",
