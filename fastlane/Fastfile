@@ -32,12 +32,6 @@ platform :android do
     lane :build do
       gradle(
     task: "assemble",
-             properties: {
-                "android.injected.signing.store.file" => "/Users/Connollysean/StudioProjects/VMworld2020/keystore.jks",
-                "android.injected.signing.store.password" => "VMware1!",
-                "android.injected.signing.key.alias" => "Key0",
-                "android.injected.signing.key.password" => "VMware1!",
-                },
     build_type: "Release",
     print_command: false)
     end
