@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Bundle appRestrictions;
     private String test_URl = "";
 
-    //This is Andrew
+    //This is Andrew 2
 
 
     @Override
