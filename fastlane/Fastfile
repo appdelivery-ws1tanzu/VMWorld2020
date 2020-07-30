@@ -38,7 +38,6 @@ platform :android do
 
       desc "Deploy a new version to the Google Play"
       lane :signedBuild do
-      gradle(task: 'clean')
         gradle(task: "clean assemble",
          properties: {
             "android.injected.signing.store.file" => "/Users/Connollysean/StudioProjects/VMworld2020/keystore.jks",
