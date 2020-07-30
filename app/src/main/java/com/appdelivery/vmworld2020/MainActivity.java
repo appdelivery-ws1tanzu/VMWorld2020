@@ -3,11 +3,14 @@ package com.appdelivery.vmworld2020;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.RestrictionsManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Context;
 
 import java.util.HashMap;
 
@@ -17,13 +20,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.content.Context.RESTRICTIONS_SERVICE;
+
 public class MainActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
     private String BASE_URL = "http://10.0.2.2:3000";
+    private Bundle appRestrictions;
+    private String test_URl = "";
 
-    //This is Andrew Again Why are you not updating
+    //This is Andrew
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,19 @@ public class MainActivity extends AppCompatActivity {
                 handleSignupDialog();
             }
         });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        RestrictionsManager myRestrictionsMgr = (RestrictionsManager) MainActivity.this.getSystemService(RESTRICTIONS_SERVICE);
+
+        appRestrictions = myRestrictionsMgr.getApplicationRestrictions();
+        test_URl = appRestrictions.getString("BaseURL");
+
+        TextView textViewTitle = (TextView) findViewById(R.id.BaseURLText);
+        textViewTitle.setText(test_URl);
+
     }
 
     private void handleLoginDialog() {
