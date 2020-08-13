@@ -3,5 +3,6 @@
     <restriction
         android:key="BaseURL"
         android:restrictionType="string"
-        android:title="@string base_url"/>
+        android:defaultValue="TestingAndrew"
+        android:title="@string/base_url"/>
 </restrictions>

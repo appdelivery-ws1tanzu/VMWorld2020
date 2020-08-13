@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         appRestrictions = myRestrictionsMgr.getApplicationRestrictions();
         test_URl = appRestrictions.getString("BaseURL");
 
+
         TextView textViewTitle = (TextView) findViewById(R.id.BaseURLText);
         textViewTitle.setText(test_URl);
 
