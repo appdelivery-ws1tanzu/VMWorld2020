@@ -36,16 +36,14 @@ platform :android do
     print_command: false)
     end
 
-      desc "Deploy a new version to the Google Play"
-      lane :deploy do
-      gradle(task: 'clean')
-        gradle(task: "clean assembleRelease",
+      desc "Deploy a signed version of the app"
+      lane :signedBuild do
+        gradle(task: "clean assemble",
          properties: {
             "android.injected.signing.store.file" => "/Users/Connollysean/StudioProjects/VMworld2020/keystore.jks",
             "android.injected.signing.store.password" => "VMware1!",
             "android.injected.signing.key.alias" => "Key0",
             "android.injected.signing.key.password" => "VMware1!",
             })
-        upload_to_play_store(track: 'internal')
       end
 end
