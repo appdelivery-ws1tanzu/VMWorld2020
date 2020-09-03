@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
-    private String BASE_URL = "http://10.0.2.2:3000";
+    private String BASE_URL = "http://34.69.5.119"; //Maybe port 3000?
     private Bundle appRestrictions;
     private String test_URl = "";
 
@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //This causes the App to crash -- due to BASE URL not being available
-        /*retrofit = new Retrofit.Builder()
+        retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         retrofitInterface = retrofit.create(RetrofitInterface.class);
-        */
+
         
         findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
             @Override
