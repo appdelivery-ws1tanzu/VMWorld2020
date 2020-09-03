@@ -18,6 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.Retrofit.Builder;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.content.Context.RESTRICTIONS_SERVICE;
@@ -40,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         //This causes the App to crash -- due to BASE URL not being available
         retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            .baseUrl(BASE_URL.toString())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 
         retrofitInterface = retrofit.create(RetrofitInterface.class);
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+   /* @Override
     protected void onResume(){
         super.onResume();
         RestrictionsManager myRestrictionsMgr = (RestrictionsManager) MainActivity.this.getSystemService(RESTRICTIONS_SERVICE);
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textViewTitle = (TextView) findViewById(R.id.BaseURLText);
         textViewTitle.setText(test_URl);
 
-    }
+    } */
 
     private void handleLoginDialog() {
 
