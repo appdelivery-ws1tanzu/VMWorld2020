@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
-    private String BASE_URL = "http://34.69.5.119"; //Maybe port 3000?
+    private String BASE_URL = "http://34.69.5.119:80"; //Maybe port 3000?
     private Bundle appRestrictions;
     private String test_URl = "";
 
