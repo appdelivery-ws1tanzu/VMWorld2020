@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //This causes the App to crash -- due to BASE URL not being available
         retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL.toString())
             .addConverterFactory(GsonConverterFactory.create())
