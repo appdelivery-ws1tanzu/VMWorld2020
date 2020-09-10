@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText emailEdit = view.findViewById(R.id.emailEdit);
         final EditText passwordEdit = view.findViewById(R.id.passwordEdit);
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+         /*loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
+        }); */
     }
 
     private void handleSignupDialog() {
